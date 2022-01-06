@@ -18,10 +18,9 @@
         android:textSize="53sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31" />
+        app:layout_constraintVertical_bias="0.233" />
 
     <TextView
         android:id="@+id/textView3"
@@ -59,6 +58,26 @@
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="167dp"
+        android:layout_height="57dp"
+        android:backgroundTint="#FF7600"
+        android:bottomLeftRadius="40dp"
+        android:bottomRightRadius="40dp"
+        android:fontFamily="@font/montserratbold"
+        android:text="next"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:topLeftRadius="40dp"
+        android:topRightRadius="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filledTextField"
+        app:layout_constraintVertical_bias="0.334" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
