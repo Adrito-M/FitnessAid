@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessAid">
         <activity
+            android:name=".PresetsScreen"
+            android:exported="false" />
+        <activity
             android:name=".Screen2"
             android:exported="false" />
         <activity
