@@ -8,10 +8,8 @@
     android:layout_margin="5dp"
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="12dp"
-    app:cardElevation="3dp"
+    app:cardElevation="30dp"
     app:contentPadding="4dp"
-    app:strokeColor="@color/black"
-    app:strokeWidth="2dp"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,7 +28,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserratregular"/>
 
         <TextView
             android:id="@+id/activities_in"
@@ -40,7 +39,8 @@
             android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserratregular"/>
 
         <Button
             android:id="@+id/view_button"

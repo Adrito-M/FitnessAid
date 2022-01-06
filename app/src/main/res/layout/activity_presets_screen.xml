@@ -9,25 +9,25 @@
     <TextView
         android:id="@+id/salutation_preset"
         android:layout_width="417dp"
-        android:layout_height="223dp"
+        android:layout_height="164dp"
         android:background="@drawable/rounded_corner"
         android:fontFamily="@font/montserratbold"
-        android:gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="40sp"
+        android:paddingEnd="40sp"
         android:text="Hello"
-        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="40sp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/preset_view"
-        android:layout_width="321dp"
-        android:layout_height="509dp"
-        android:layout_marginBottom="44dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salutation_preset" />
 </androidx.constraintlayout.widget.ConstraintLayout>

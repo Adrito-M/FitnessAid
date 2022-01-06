@@ -26,7 +26,7 @@ class PresetsScreen : AppCompatActivity() {
         val sharedPreferences: SharedPreferences = getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
         val username = sharedPreferences.getString("username", " ")
         val  salutation = findViewById<TextView>(R.id.salutation_preset)
-        salutation.setText("Hello, ${username}")
+        salutation.setText("Hello,\n${username}")
 
 
     }
