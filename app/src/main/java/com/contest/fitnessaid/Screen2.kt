@@ -26,7 +26,7 @@ class Screen2 : AppCompatActivity() {
 
                 val routineNames = mutableListOf<String>("Chest", "Back", "Biceps", "Triceps", "Leg", "Cardio")
                 val arrSize = routineNames.size
-                for( i in 0..(arrSize-1)){
+                for( i in 0 until arrSize){
                     editor.putString("routineName${i}", routineNames[i])
                 }
 
