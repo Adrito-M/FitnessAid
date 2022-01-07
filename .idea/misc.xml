@@ -4,17 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Adrito Mukherjee/Desktop/FitnessAid/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14537037037037037" />
+        <entry key="..\:/Users/Adrito Mukherjee/Desktop/FitnessAid/app/src/main/res/drawable/button_border.xml" value="0.13240740740740742" />
         <entry key="..\:/Users/Adrito Mukherjee/Desktop/FitnessAid/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Adrito Mukherjee/Desktop/FitnessAid/app/src/main/res/drawable/rounded_corner.xml" value="0.290625" />
         <entry key="..\:/Users/Adrito Mukherjee/Desktop/FitnessAid/app/src/main/res/layout/activity_main.xml" value="0.14375" />
+        <entry key="..\:/Users/Adrito Mukherjee/Desktop/FitnessAid/app/src/main/res/layout/activity_preset_descriptions.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Adrito Mukherjee/Desktop/FitnessAid/app/src/main/res/layout/activity_presets_screen.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Adrito Mukherjee/Desktop/FitnessAid/app/src/main/res/layout/activity_screen2.xml" value="0.536" />
+        <entry key="..\:/Users/Adrito Mukherjee/Desktop/FitnessAid/app/src/main/res/layout/presets_card_layout.xml" value="0.6" />
         <entry key="..\:/Users/Adrito Mukherjee/Desktop/FitnessAid/app/src/main/res/mipmap-anydpi-v26/ic_app.xml" value="0.1" />
         <entry key="..\:/Users/Adrito Mukherjee/Desktop/FitnessAid/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14537037037037037" />
-        <entry key="..\:/Users/soumy/AndroidStudioProjects/FitnessAid1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
-        <entry key="..\:/Users/soumy/AndroidStudioProjects/FitnessAid1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
-        <entry key="..\:/Users/soumy/AndroidStudioProjects/FitnessAid1/app/src/main/res/drawable/rounded_corner.xml" value="0.2703125" />
-        <entry key="..\:/Users/soumy/AndroidStudioProjects/FitnessAid1/app/src/main/res/layout/activity_main.xml" value="0.17391304347826086" />
-        <entry key="..\:/Users/soumy/AndroidStudioProjects/FitnessAid1/app/src/main/res/layout/activity_presets_screen.xml" value="0.23541666666666666" />
-        <entry key="..\:/Users/soumy/AndroidStudioProjects/FitnessAid1/app/src/main/res/layout/activity_screen2.xml" value="0.2" />
-        <entry key="..\:/Users/soumy/AndroidStudioProjects/FitnessAid1/app/src/main/res/layout/presets_card_layout.xml" value="0.536" />
       </map>
     </option>
   </component>

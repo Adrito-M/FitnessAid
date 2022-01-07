@@ -1,11 +1,14 @@
 package com.contest.fitnessaid
 
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 
 class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
@@ -18,6 +21,12 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
         holder.presetTitle.text = titles[position]
+        holder.viewButton.setOnClickListener {
+            val activity = holder.viewButton.context as Activity
+            val intent = Intent(activity, PresetDescriptions::class.java)
+            intent.putExtra("PresetName", titles[position])
+            activity.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
