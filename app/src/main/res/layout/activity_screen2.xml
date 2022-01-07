@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserratregular"
-        android:text="Introduce yourself!"
+        android:text="Introduce yourself."
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="32sp"
@@ -42,7 +42,7 @@
         android:id="@+id/filledTextField"
 
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
+        
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/filledTextField"
-        app:layout_constraintVertical_bias="0.334" />
+        app:layout_constraintVertical_bias="0.284" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
