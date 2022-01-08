@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class PresetDescriptions : AppCompatActivity() {
 
@@ -33,5 +34,14 @@ class PresetDescriptions : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
         adapter=RecyclerAdapterUnresponsive(applicationContext)
         recyclerView.adapter=adapter
+
+        val nextButton = findViewById<FloatingActionButton>(R.id.preset_start)
+        nextButton.setOnClickListener {
+            val intent = Intent(this@PresetDescriptions, ExerciseScreen::class.java)
+            intent.putExtra("PresetName", name)
+            intent.putExtra("CurrentExerciseIndex", 0)
+            startActivity(intent)
+        }
+
     }
 }
