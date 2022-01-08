@@ -16,6 +16,14 @@ class Screen2 : AppCompatActivity() {
         val btn = findViewById<Button>(R.id.buttonwelcome)
         val username = findViewById<EditText>(R.id.username)
 
+
+
+
+
+
+
+
+
         btn.setOnClickListener {
             val intent = Intent(this@Screen2, PresetsScreen::class.java)
             val userNameString = username.text.toString()
@@ -31,7 +39,7 @@ class Screen2 : AppCompatActivity() {
                 }
 
                 //chestRoutines
-                val chestRoutines = mutableListOf<Int>(13,  15,  23,  9,  20, 8,  5,  21)
+                val chestRoutines = mutableListOf<Int>(13,  15,  23,  9,  20, 8,  6,  21)
                 editor.putInt("Chest_routine_size", 8)
                 for (i in 0..7){
                     editor.putInt("Chest_routine${i}", chestRoutines[i])
@@ -40,7 +48,7 @@ class Screen2 : AppCompatActivity() {
                 //chestRoutines
 
                 //legRoutines
-                val legRoutines = mutableListOf<Int>(1, 19,  17,  18,  24,  6)
+                val legRoutines = mutableListOf<Int>(1, 19,  17,  18,  24,  5)
                 editor.putInt("Leg_routine_size", 6)
                 for (i in 0..5){
                     editor.putInt("Leg_routine${i}", legRoutines[i])
@@ -77,9 +85,9 @@ class Screen2 : AppCompatActivity() {
                 //tricepsRoutines
 
                 //cardioRoutines
-                val cardioRoutines = mutableListOf<Int>(29, 3, 10, 27)
-                editor.putInt("Cardio_routine_size", 4)
-                for (i in 0..3){
+                val cardioRoutines = mutableListOf<Int>(31, 7, 12)
+                editor.putInt("Cardio_routine_size", 3)
+                for (i in 0..2){
                     editor.putInt("Cardio_routine${i}", cardioRoutines[i])
                     editor.putInt("Cardio_routine_time${i}", 300)
                 }
