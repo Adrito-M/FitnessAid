@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -15,6 +16,13 @@ import java.text.DecimalFormat
 import java.text.NumberFormat
 
 class ExerciseScreen : AppCompatActivity() {
+
+    lateinit var fab:FloatingActionButton
+    lateinit var timertext:TextView
+
+    lateinit var timerExt: CountDownTimerExt
+
+
     private var isPaused = false
     private var isCancelled = false
     private var resumeFromMillis:Long = 0
@@ -51,6 +59,9 @@ class ExerciseScreen : AppCompatActivity() {
         30 to "Standing dumbbell curl",
         31 to "Treadmill"
     )
+
+
+
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,14 +80,11 @@ class ExerciseScreen : AppCompatActivity() {
 //        val preset_name = intent.getStringExtra("PresetName")
 //        val exercise_index = map_exercises[index]
 
-
-
-        val fab = findViewById<FloatingActionButton>(R.id.fab)
-        val nextBtn = findViewById<Button>(R.id.buttonNext)
-        val timertext = findViewById<TextView>(R.id.timerText)
+        fab  = findViewById<FloatingActionButton>(R.id.fab)
+        timertext = findViewById<TextView>(R.id.timerText)
         val fabBack = findViewById<FloatingActionButton>(R.id.backFab)
 
-        nextBtn.isVisible = false
+        //nextBtn.isVisible = false
 
         val netTimeInSec:Long = 30
         val millisInFuture:Long = netTimeInSec*1000
@@ -86,99 +94,50 @@ class ExerciseScreen : AppCompatActivity() {
         var p: Boolean = true
         var increment:Long = 1000
 
-        //fab onclick toggle function
-        fab.setOnClickListener{
-            if(p){
-                fab.setImageResource(R.drawable.ic_baseline_play_arrow_24)
-                isPaused = true
 
-            }else{
-                fab.setImageResource(R.drawable.ic_baseline_pause_24)
-                isPaused = false
-                object : CountDownTimer(resumeFromMillis, increment) {
-
-                    override fun onTick(millisUntilFinished: Long) {
-                        if(isPaused){
-                            resumeFromMillis = millisUntilFinished
-                            cancel()
-                        }
-                        val f: NumberFormat = DecimalFormat("00")
-                        var sec :Long = millisUntilFinished/1000
-                        sec %= 60
-                        val min:Long = (millisUntilFinished / 60000) % 60
-                        timertext.setText("${f.format(min)}:${f.format(sec)}")
-
-
-                        remTime = millisUntilFinished/1000
-                    }
-
-                    override fun onFinish() {
-                        timertext.setText("done!")
-                        fab.hide()
+        resumeFromMillis = netTimeInSec*1000
 
 
 
-                        /*
-                        add the intent related things OVER HERE
-                         */
-
-
-                        val intent = Intent(this@ExerciseScreen, CongratulationsPage::class.java)
-                        startActivity(intent)
-
-
-                        /*
-                        add the intent related things OVER HERE
-                         */
-
-                    }
-                }.start()
-            }
-            p = !p
-        }
-
-
-
-        object : CountDownTimer(netTimeInSec*1000, increment) {
-
-            override fun onTick(millisUntilFinished: Long) {
-                if(isPaused){
-                    resumeFromMillis = millisUntilFinished
-                    cancel()
-                }
-
+        timerExt = object : CountDownTimerExt(resumeFromMillis, 1000) {
+            override fun onTimerTick(millisUntilFinished: Long) {
+                //Log.d("TAG", "onTimerTick $millisUntilFinished")
                 val f: NumberFormat = DecimalFormat("00")
                 var sec :Long = millisUntilFinished/1000
                 sec %= 60
                 val min:Long = (millisUntilFinished / 60000) % 60
                 timertext.setText("${f.format(min)}:${f.format(sec)}")
-
-
-                remTime = millisUntilFinished/1000
             }
-
-            override fun onFinish() {
+            override fun onTimerFinish() {
+                //Log.d("TAG", "onTimerFinish")
                 timertext.setText("done!")
                 fab.hide()
 
-                /*
-                add the intent related things OVER HERE
-                 */
 
                 val intent = Intent(this@ExerciseScreen, CongratulationsPage::class.java)
                 startActivity(intent)
-
-
-                /*
-                add the intent related things OVER HERE
-                 */
-
+                finish()
             }
-        }.start()
+
+        }
+
+        timerExt.start()
 
 
-
-
+        //fab onclick toggle function
+        fab.setOnClickListener{
+            if(p){
+                fab.setImageResource(R.drawable.ic_baseline_play_arrow_24)
+                isPaused = true
+                timerExt.pause()
+            }else{
+                fab.setImageResource(R.drawable.ic_baseline_pause_24)
+                isPaused = false
+                timerExt.start()
+            }
+            p = !p
+        }
     }
+
 
 }
