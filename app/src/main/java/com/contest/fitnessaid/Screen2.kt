@@ -22,7 +22,7 @@ class Screen2 : AppCompatActivity() {
             if (userNameString.trim() != "") {
                 intent.putExtra("UserName", userNameString)
                 val sharedPreference =  getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
-                var editor = sharedPreference.edit()
+                val editor = sharedPreference.edit()
 
                 val routineNames = mutableListOf<String>("Chest", "Back", "Biceps", "Triceps", "Leg", "Cardio")
                 val arrSize = routineNames.size
@@ -50,7 +50,7 @@ class Screen2 : AppCompatActivity() {
 
                 //bicepsRoutines
                 val bicepsRoutines = mutableListOf<Int>(2, 14, 25,  30,  11)
-                editor.putInt("biceps_routine_size", 5)
+                editor.putInt("Biceps_routine_size", 5)
                 for (i in 0..4){
                     editor.putInt("Biceps_routine${i}", bicepsRoutines[i])
                     editor.putInt("Biceps_routine_time${i}", 300)
@@ -60,7 +60,7 @@ class Screen2 : AppCompatActivity() {
 
                 //backRoutines
                 val backRoutines = mutableListOf<Int>(22, 4, 28, 16, 26)
-                editor.putInt("back_routine_size", 5)
+                editor.putInt("Back_routine_size", 5)
                 for (i in 0..4){
                     editor.putInt("Back_routine${i}", backRoutines[i])
                     editor.putInt("Back_routine_time${i}", 300)
@@ -69,7 +69,7 @@ class Screen2 : AppCompatActivity() {
 
                 //tricepsRoutines
                 val tricepsRoutines = mutableListOf<Int>(29,  3, 10, 27)
-                editor.putInt("triceps_routine_size", 4)
+                editor.putInt("Triceps_routine_size", 4)
                 for (i in 0..3){
                     editor.putInt("Triceps_routine${i}", tricepsRoutines[i])
                     editor.putInt("Triceps_routine_time${i}", 300)
@@ -78,7 +78,7 @@ class Screen2 : AppCompatActivity() {
 
                 //cardioRoutines
                 val cardioRoutines = mutableListOf<Int>(29, 3, 10, 27)
-                editor.putInt("cardio_routine_size", 4)
+                editor.putInt("Cardio_routine_size", 4)
                 for (i in 0..3){
                     editor.putInt("Cardio_routine${i}", cardioRoutines[i])
                     editor.putInt("Cardio_routine_time${i}", 300)
