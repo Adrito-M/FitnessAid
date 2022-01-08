@@ -51,6 +51,7 @@ class RecyclerAdapterUnresponsive(context: Context): RecyclerView.Adapter<Recycl
         31 to "Treadmill"
     )
 
+
     val sp : SharedPreferences = context.getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
     val presetname = sp.getString("PresetName", "err")
     val size = sp.getInt(presetname + "_routine_size", 0)

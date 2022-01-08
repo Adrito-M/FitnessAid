@@ -1,6 +1,7 @@
 package com.contest.fitnessaid
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.os.CountDownTimer
 import android.os.Handler
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.core.view.isVisible
@@ -19,7 +21,6 @@ class ExerciseScreen : AppCompatActivity() {
 
     lateinit var fab:FloatingActionButton
     lateinit var timertext:TextView
-
     lateinit var timerExt: CountDownTimerExt
 
 
@@ -61,39 +62,68 @@ class ExerciseScreen : AppCompatActivity() {
     )
 
 
+    val map_pictures = mapOf(
+        1 to R.drawable.backsquats,
+        2 to R.drawable.barbellcurl,
+        3 to R.drawable.benchtricepdips,
+        4 to R.drawable.bentoverrow,
+        5 to R.drawable.calfraises,
+        6 to R.drawable.chestfly,
+        7 to R.drawable.cycle,
+        8 to R.drawable.dips,
+        9 to R.drawable.dumbbellbenchpress,
+        10 to R.drawable.dumbbelloverheadtricepsextension,
+        11 to R.drawable.ezbarcurl,
+        12 to R.drawable.elliptical,
+        13 to R.drawable.flatbenchpress,
+        14 to R.drawable.hammercurl,
+        15 to R.drawable.inclinedbenchpress,
+        16 to R.drawable.latpulldown,
+        17 to R.drawable.legextensions,
+        18 to R.drawable.legpress,
+        19 to R.drawable.lunges,
+        20 to R.drawable.machinechestpress,
+        21 to R.drawable.machinefly,
+        22 to R.drawable.pullup,
+        23 to R.drawable.pushups,
+        24 to R.drawable.reverselegcurlmachine,
+        25 to R.drawable.reversegripbentoverrow,
+        26 to R.drawable.seatedcablerowlats,
+        27 to R.drawable.singlearmtricepkickback,
+        28 to R.drawable.singlearmrow,
+        29 to R.drawable.skullcrusher,
+        30 to R.drawable.standingdumbbellcurl,
+        31 to R.drawable.treadmill
+    )
+
+
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise_screen)
-        /*
-        val index = getIntExtra('key', 'default')
-        val counter = getIntExtra('sdf','sdfds')
-        val size = getIntExtra('dsf','sdf')
-        val presetName = getStringExtra('fdg','')
+        val sp : SharedPreferences = getSharedPreferences("PREFERENCE_NAME", MODE_PRIVATE)
+        val intent = getIntent()
+        val presetName = intent.getStringExtra("PresetName")
+        val exerciseListSize = sp.getInt("${presetName}_routine_size", 0)
+        val exerciseList = mutableListOf<Int>()
+        for (i in 0 until exerciseListSize) {
+            exerciseList.add(sp.getInt("${presetName}_routine${i}",0))
+        }
 
-        val string = map.get(index)
-
-        text.setText(string)
-        */
-//        val intent = getIntent()
-//        val preset_name = intent.getStringExtra("PresetName")
-//        val exercise_index = map_exercises[index]
-
-        fab  = findViewById<FloatingActionButton>(R.id.fab)
-        timertext = findViewById<TextView>(R.id.timerText)
+        val exerciseIndex = intent.getIntExtra("CurrentExerciseIndex", 0)
+        val exerciseTitleTV = findViewById<TextView>(R.id.textView)
+        val picture = findViewById<ImageView>(R.id.exercise_image)
+        exerciseTitleTV.text = map_exercises[exerciseList[exerciseIndex]]
+        picture.setImageResource(map_pictures[exerciseList[exerciseIndex]] as Int)
+        fab  = findViewById(R.id.fab)
+        timertext = findViewById(R.id.timerText)
         val fabBack = findViewById<FloatingActionButton>(R.id.backFab)
 
-        //nextBtn.isVisible = false
 
-        val netTimeInSec:Long = 30
-        val millisInFuture:Long = netTimeInSec*1000
-        val countDownInterval:Long = 1000
-        var remTime: Long = 0
+        val netTimeInSec:Long = 10
 
-        var p: Boolean = true
-        var increment:Long = 1000
-
+        var p = true
 
         resumeFromMillis = netTimeInSec*1000
 
@@ -101,7 +131,6 @@ class ExerciseScreen : AppCompatActivity() {
 
         timerExt = object : CountDownTimerExt(resumeFromMillis, 1000) {
             override fun onTimerTick(millisUntilFinished: Long) {
-                //Log.d("TAG", "onTimerTick $millisUntilFinished")
                 val f: NumberFormat = DecimalFormat("00")
                 var sec :Long = millisUntilFinished/1000
                 sec %= 60
@@ -109,13 +138,19 @@ class ExerciseScreen : AppCompatActivity() {
                 timertext.setText("${f.format(min)}:${f.format(sec)}")
             }
             override fun onTimerFinish() {
-                //Log.d("TAG", "onTimerFinish")
                 timertext.setText("done!")
                 fab.hide()
 
 
-                val intent = Intent(this@ExerciseScreen, CongratulationsPage::class.java)
-                startActivity(intent)
+                val intent2 = Intent(this@ExerciseScreen, CongratulationsPage::class.java)
+                intent2.putExtra("PresetName", presetName)
+                var isMore = true
+                if (exerciseIndex == exerciseListSize - 1) {
+                    isMore = false
+                }
+                intent2.putExtra("isMore", isMore)
+                intent2.putExtra("CurrentExerciseIndex", exerciseIndex)
+                startActivity(intent2)
                 finish()
             }
 
@@ -123,8 +158,6 @@ class ExerciseScreen : AppCompatActivity() {
 
         timerExt.start()
 
-
-        //fab onclick toggle function
         fab.setOnClickListener{
             if(p){
                 fab.setImageResource(R.drawable.ic_baseline_play_arrow_24)
@@ -137,6 +170,17 @@ class ExerciseScreen : AppCompatActivity() {
             }
             p = !p
         }
+
+        fabBack.setOnClickListener {
+            onBackPressed()
+        }
+    }
+
+    @Override
+    override fun onBackPressed() {
+        timerExt.pause()
+        finish()
+        super.onBackPressed()
     }
 
 

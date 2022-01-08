@@ -1,7 +1,10 @@
 package com.contest.fitnessaid
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import nl.dionsegijn.konfetti.core.Party
 import nl.dionsegijn.konfetti.core.Position
 import nl.dionsegijn.konfetti.core.emitter.Emitter
@@ -25,10 +28,30 @@ class CongratulationsPage : AppCompatActivity() {
         )
         konfetti.start(party)
 
-        /*
-        @Adrito put your code below this
-         */
+        val intent = getIntent()
+        val isMore = intent.getBooleanExtra("isMore", false)
+        val presetName = intent.getStringExtra("PresetName")
+        val currentExerciseIndex = intent.getIntExtra("CurrentExerciseIndex",0)
+        val nextButton = findViewById<Button>(R.id.buttonNext)
 
+        if(isMore) {
+            nextButton.setOnClickListener {
+                val intent2 = Intent(this@CongratulationsPage, ExerciseScreen::class.java)
+                intent2.putExtra("PresetName", presetName)
+                intent2.putExtra("CurrentExerciseIndex", currentExerciseIndex + 1)
+                startActivity(intent2)
+                finish()
+            }
+        }
+        else {
+            val congratsDesc = findViewById<TextView>(R.id.textView8)
+            congratsDesc.text = "You Finished The ${presetName} Routine!!"
+            nextButton.setOnClickListener {
+                val intent3 = Intent(this@CongratulationsPage, PresetsScreen::class.java)
+                startActivity(intent3)
+                finish()
+            }
+        }
 
     }
 }

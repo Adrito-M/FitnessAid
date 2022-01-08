@@ -35,6 +35,11 @@ class PresetDescriptions : AppCompatActivity() {
         adapter=RecyclerAdapterUnresponsive(applicationContext)
         recyclerView.adapter=adapter
 
+        val back = findViewById<FloatingActionButton>(R.id.back_preset_desc)
+        back.setOnClickListener {
+            onBackPressed()
+        }
+
         val nextButton = findViewById<FloatingActionButton>(R.id.preset_start)
         nextButton.setOnClickListener {
             val intent = Intent(this@PresetDescriptions, ExerciseScreen::class.java)

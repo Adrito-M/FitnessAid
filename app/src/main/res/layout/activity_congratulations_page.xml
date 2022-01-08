@@ -34,12 +34,15 @@
         android:text="let's move next"
         android:textColor="@color/black"
         android:textSize="29sp"
+        android:textAlignment="center"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:paddingHorizontal="30dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonNext"

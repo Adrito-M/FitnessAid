@@ -2,5 +2,6 @@
     <string name="app_name">beFit.</string>
     <string name="logo">beFit.</string>
     <string name="dummyText">Stand with feet hip-width apart, engage your core, and take a big step backward. Activate your glutes as you bend front knee to lower your body so back knee lightly taps the floor while keeping upper body upright</string>
+    <string name="formatted_time">%02d:%02d</string>
 
 </resources>
