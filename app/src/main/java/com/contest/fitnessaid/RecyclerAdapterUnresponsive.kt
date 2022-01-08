@@ -77,9 +77,6 @@ class RecyclerAdapterUnresponsive(context: Context): RecyclerView.Adapter<Recycl
 
         var exerciseName : TextView
         var exerciseTime : TextView
-        //val sharedPreference =  context.getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
-        //val preset_name = sharedPreference.getString("PresetName", "err")
-        //val editor = sharedPreference.edit()
 
         init {
             exerciseName = itemView.findViewById(R.id.exercise_name)
@@ -88,13 +85,4 @@ class RecyclerAdapterUnresponsive(context: Context): RecyclerView.Adapter<Recycl
 
     }
 
-}
-
-public class ValueCreator (context: Context){
-    //lateinit var sp : SharedPreferences
-    public var s = 5
-    init {
-        //sp = context.getSharedPreferences()
-
-    }
 }
