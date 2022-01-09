@@ -32,9 +32,9 @@
         android:paddingTop="0dp"
         android:paddingEnd="40dp"
         android:paddingBottom="20dp"
-        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+        android:text="EACH NEW DAY IS A NEW OPPORTUNITY TO IMPROVE YOURSELF.\nTAKE IT.\nAND MAKE THE MOST OF IT."
         android:textColor="#D3D3D3"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/preset_name"
         tools:layout_editor_absoluteX="0dp" />
 

@@ -19,11 +19,6 @@ class Screen2 : AppCompatActivity() {
 
 
 
-
-
-
-
-
         btn.setOnClickListener {
             val intent = Intent(this@Screen2, PresetsScreen::class.java)
             val userNameString = username.text.toString()

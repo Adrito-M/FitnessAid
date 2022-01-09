@@ -22,7 +22,8 @@ class PresetsScreen : AppCompatActivity() {
         val  recyclerView=findViewById<RecyclerView>(R.id.preset_view)
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        adapter=RecyclerAdapter()
+
+        adapter = RecyclerAdapter(this)
         recyclerView.adapter=adapter
 
         val gym_places = findViewById<Button>(R.id.gym_places)
