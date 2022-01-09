@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         Handler().postDelayed({
             if(cond == "YES"){
                 //screen2 needs to be changed to presetScreen
-                val intent = Intent(this@MainActivity, Screen2::class.java )
+                val intent = Intent(this@MainActivity, PresetsScreen::class.java )
                 startActivity(intent)
                 finish()
             }else{
