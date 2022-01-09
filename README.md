@@ -33,7 +33,7 @@ SharedPreferences is used extensively in this app to keep track of the data of a
 
 ## Application Link & Future Scope
 You can access the app via this link:
-https://www.mediafire.com/file/98ut7q0z5gulk1u/beFit-v1.0.1.apk/file
+https://www.mediafire.com/file/22ts70807t5cjyi/beFit-v1.0.2.apk/file
 <link>
 or explore our GitHub repo
 
