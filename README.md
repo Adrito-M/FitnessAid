@@ -14,16 +14,16 @@ definitely motivate the user to exercise regularly.
 ## Functionality and Concepts Used
 The app has a clean and aesthetic UI. The design of this app is made so that it is effortless to use and interact with. The color scheme is consistent throughout the app and follows an excellent visual design.
 
-### Layout and Components: 
+#### Layout and Components: 
 It uses Constraint Layout to arrange the UI elements in an orderly manner and maintain consistency. Here we also implemented some Material Design Elements such as CardView, Button, FloatingActionButton(FAB). Linear Layout is also used as a parent layout in the CardView.
 
-### CountDownTimer: 
+#### CountDownTimer: 
 This app also contains a countdown timer which shows the time left for a specific exercise. The timer consists of a TextView that gets updated with CountDownTimer Class's help.
 
-### RecyclerView: 
+#### RecyclerView: 
 To handle the list of various activities, RecyclerView is used in this app.
 
-### SharedPreferences
+#### SharedPreferences
 SharedPreferences is used extensively in this app to keep track of the data of all exercises and their description. A mutable map is used along with the shared preferences to provide a flawless experience.
 
 ## Application Link & Future Scope
