@@ -1,6 +1,7 @@
 package com.contest.fitnessaid
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -27,6 +28,11 @@ class CongratulationsPage : AppCompatActivity() {
             emitter = Emitter(duration = 100, TimeUnit.MILLISECONDS).max(100)
         )
         konfetti.start(party)
+
+        val ring = MediaPlayer.create(this, R.raw.konfett)
+        ring.start()
+
+
 
         val intent = getIntent()
         val isMore = intent.getBooleanExtra("isMore", false)

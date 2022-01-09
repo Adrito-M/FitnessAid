@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".PresetsScreen">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/salutation_preset"
         android:layout_width="417dp"
         android:layout_height="164dp"
@@ -17,7 +17,7 @@
         android:paddingEnd="40sp"
         android:text="Hello"
         android:textColor="@color/white"
-        android:textSize="48sp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,4 +30,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/salutation_preset" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/gym_places"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="✏️edit"
+        android:textSize="19sp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 </androidx.constraintlayout.widget.ConstraintLayout>

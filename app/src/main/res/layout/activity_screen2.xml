@@ -60,7 +60,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonwelcome"
         android:layout_width="167dp"
         android:layout_height="57dp"
@@ -70,10 +70,11 @@
         android:topLeftRadius="40dp"
         android:topRightRadius="40dp"
         android:fontFamily="@font/montserratbold"
-        android:text="next"
+        android:text="NEXT"
         android:textAllCaps="false"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp"
+        app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
