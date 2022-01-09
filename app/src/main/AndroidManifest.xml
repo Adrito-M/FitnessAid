@@ -18,6 +18,7 @@
         android:theme="@style/Theme.FitnessAid">
         <activity
             android:name=".MapScreen"
+            android:screenOrientation="portrait"
             android:exported="false" />
 
         <meta-data
@@ -26,21 +27,27 @@
 
         <activity
             android:name=".CongratulationsPage"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ExerciseScreen"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".PresetDescriptions"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".PresetsScreen"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".Screen2"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
