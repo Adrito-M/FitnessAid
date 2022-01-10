@@ -38,3 +38,10 @@ https://www.mediafire.com/file/22ts70807t5cjyi/beFit-v1.0.2.apk/file
 or explore our GitHub repo
 
 In the future, we aim to add more features to this app to make it more user-friendly and a perfect fitness companion. We will also be adding features like daily progress tracking, diet suggestion, calorie intake calculator, integrating Google Maps API to show Gyms Near Me, and a User Profile System to keep track of their fitness.
+
+
+## Contributors
+Aaryan Kumar: AKLucifer666<br/>
+Adrito Mukherjee: MadRat-0<br/>
+Maithri Muralikrishna: maithri-3<br/>
+Soumyadeep Das: somudas
